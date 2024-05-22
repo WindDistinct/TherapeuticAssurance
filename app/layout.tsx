@@ -5,12 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Farmacia SpeedSalud",
-  description: "Farmacia dedicada a la venta de todo tipo de medicamentos"
-  
-
-    
-    
+  title: "TherapeuticAssurance",
+  description: "Tratamientos para todo tipo de pacientes"
 };
 
 export default function RootLayout({
@@ -20,9 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-
-      
+      <head>      
       </head>
 
       <body className={inter.className}>{children}</body>
