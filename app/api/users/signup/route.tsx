@@ -25,8 +25,9 @@ export async function POST(request: NextRequest) {
             { status:400 })
         }
 
-        //Encriptar con Hash
+        //Generar  base de encriptación
         const salt = await bcryptjs.genSalt(10);
+        //Encriptar contraseña
         const hashedPassword = await bcryptjs.hash(password,salt);
 
         //Crear usuario

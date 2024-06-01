@@ -3,7 +3,6 @@ import User from "@/server/model/userModel";
 import { NextRequest,NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { error } from "console";
 
 connectToMongoDB();
 
@@ -45,12 +44,11 @@ export async function POST(request: NextRequest) {
             email: user.email
         }
 
-        //Crear el token
+        //Crear el token con la información a recordar del usuario
         const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET!, {
             expiresIn: "2d",
         });
 
-        //cookies del usuario
         const response = NextResponse.json({
             message: "Inicio de sesión exitoso",
             success: true,

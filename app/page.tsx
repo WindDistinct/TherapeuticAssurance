@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Header from "../components/ui/Header";
 import Footer from "@/components/ui/Footer";
-import SignUpPage from "./sign-up/page";
+import ButtonMenu from "@/components/ui/ButtonMenu";
+import Carrusel from "@/components/ui/Carrusel";
 
 export default function Home() {
   return (
@@ -9,9 +10,13 @@ export default function Home() {
           <>
 
             <Header/>
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/>
+            <main>
 
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+              <Carrusel></Carrusel>
+            </main>
+            <ButtonMenu/>
+            <br/><br/><br/><br/><br/>
             <Footer/>
           </>
             

@@ -11,3 +11,68 @@
 
 
 }
+
+#quienes-somos
+{
+
+    padding-right: 40px;
+    background-image: url(https://e.rpp-noticias.io/xlarge/2022/01/18/124312_1204340.jpg);
+    background-size: cover;
+    background-position: center;
+     height: 300px;
+
+}
+
+#a-que-se-dedica-la-empresa{
+
+    padding-right: 40px;
+    background-image: url(https://www.elfarmaceutico.es/uploads/s1/73/35/9/1f01710f32df2dc74ef1fc466f3c05d9.jpeg);
+    background-size: cover;
+    background-position: center;
+     height: 300px;
+
+
+
+
+}
+.tj{
+   
+    text-align: justify;
+
+}
+
+.mtop-7
+{
+
+    margin-top: 70px;
+
+}
+.mtop-6
+{
+
+    margin-top: 60px;
+
+}
+
+.mbottom-6{
+
+margin-bottom: 60px ;
+
+}
+
+.mright-2{
+
+    margin-right: 20px;
+}
+
+.pright-6{
+    padding-right: 60px!important;
+}
+.pleft-6{
+    padding-left: 60px!important;
+}
+
+.ptopbottom-1{
+   
+    padding: 10px 0;
+}
