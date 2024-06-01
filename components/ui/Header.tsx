@@ -9,7 +9,7 @@ export default function Header(){
                     <header className="border-t-4 border-red-600 shadow-md">                    
                         <div className="contenedor  flex justify-between  h-20">
                             <Link href="/">
-                                <img src="http://demo.tutsflow.com/medila/images/logo.png" alt="" className="" />
+                                <img src="../../public/images/logo.png" alt="" className="" />
                             </Link>
                             <nav className="flex justify-items-center items-center  gap-x-6">
                                 <Link 
