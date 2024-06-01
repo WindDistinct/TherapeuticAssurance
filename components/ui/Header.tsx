@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from "next/link"
 import ReactDOM from 'react-dom'
 import { FaWhatsapp } from "react-icons/fa";
@@ -6,10 +7,10 @@ export default function Header(){
 
     return(
                 <>
-                    <header className="border-t-4 border-red-600 shadow-md">                    
+                    <header id="enlaces" className="border-t-4 border-red-600 shadow-md">                    
                         <div className="contenedor  flex justify-between  h-20">
                             <Link href="/">
-                                <img src="../../public/images/logo.png" alt="" className="" />
+                                <img src="/images/logo.png" alt="Logo" className="" />
                             </Link>
                             <nav className="flex justify-items-center items-center  gap-x-6">
                                 <Link 
@@ -21,7 +22,7 @@ export default function Header(){
                                         href="/productos"
                                 >
                                 NUESTROS PRODUCTO                                
-                                </Link>
+                                </Link> 
                                 <Link 
                                         href="/contactanos"
                                 >                                    

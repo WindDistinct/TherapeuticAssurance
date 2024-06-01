@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+#presentacion{
+    padding-left: 15%;
+    padding-right: 15%;
+}
+#presentacion #login{
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+}
+#presentacion #icono{
+    width: 200px;
+}
+
 .contenedor
 {
 

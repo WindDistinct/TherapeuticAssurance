@@ -1,3 +1,4 @@
+import Presentacion from "@/components/ui/Presentacion"
 import Image from "next/image";
 import Header from "../components/ui/Header";
 import Footer from "@/components/ui/Footer";
@@ -12,7 +13,7 @@ export default function Home() {
             <Header/>
             <br/><br/><br/><br/><br/>
             <main>
-
+              <Presentacion></Presentacion>
               <Carrusel></Carrusel>
             </main>
             <ButtonMenu/>
