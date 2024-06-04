@@ -7,63 +7,61 @@ import ImagenesCarrusel from '../utilities/ImagenesCarrusel';
 const Carrusel: React.FC = () => {
   return (
     <div>
-      <h2>Especialidades</h2>
-      <Carousel>
+      <h1 className="subtitulo" >Especialidades</h1>
+      <div className="d-flex justify-content-center contenedor-carrusel">
+      <Carousel style={{ width: '40%' }}>
         <Carousel.Item>
-          <ImagenesCarrusel src="https://centromedicoabc.com/storage/2022/12/pediatria.jpg" alt="Pediatria" />
+          <ImagenesCarrusel src="/images/20004.jpg"  alt="Pediatria" />
           <Carousel.Caption>
-            <h3 style={{ color: 'blue' }}>Pediatria</h3>
+            <h3 style={{ color: 'black' , fontSize: '50px' }}>Pediatría</h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <ImagenesCarrusel src="https://www.clinicamadrezoraida.com.pe/wp-content/uploads/2021/07/3.jpg" alt="Cardiologia" />
+          <ImagenesCarrusel src="/images/20006.JPG"  alt="Pediatria" />
           <Carousel.Caption>
-            <h3 style={{ color: 'blue' }}>Cardiologia</h3>
+            <h3 style={{ color: 'black' , fontSize: '50px'}}>Dermatología</h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <ImagenesCarrusel src="https://aio-oftalmologia.com/wp-content/uploads/De-que-se-ocupa-un-oftalmologo.jpg" alt="Oftalmologia" />
+          <ImagenesCarrusel src="/images/20005.JPG"  alt="Cardiologia" />
           <Carousel.Caption>
-            <h3 style={{ color: 'blue' }}>Oftamologia</h3>
+            <h3 style={{ color: 'black' , fontSize: '50px' }}>Cardiología</h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <ImagenesCarrusel src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jKnwuKhvC5hdrQkeNab5dm2e3Z1ixhHZzfwANLy3sreIv7VLwz4Sud7h_RYTu7Aa5L0&usqp=CAU" alt="Quiropractico" />
+          <ImagenesCarrusel src="/images/20009.JPG"alt="Oftalmologia" />
           <Carousel.Caption>
-            <h3 style={{ color: 'blue' }}>Quiropractico</h3>
+            <h3 style={{ color: 'black' , fontSize: '50px' }}>Oftamología</h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <ImagenesCarrusel src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFJdkaR9YXIJzTUwVzmNBX9fP4ZWgQyBUr6cJk53aHN3L2sVmxk8Vq8XT6uYRvHGzS6qw&usqp=CAU" alt="Psicologia" />
+          <ImagenesCarrusel src="/images/2010.jpg"  alt="Quiropractico" />
           <Carousel.Caption>
-            <h3 style={{ color: 'blue' }}>Psicologia</h3>
+            <h3 style={{ color: 'black' , fontSize: '50px' }}>Quiropráctico</h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <ImagenesCarrusel src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpVNBB7LuF3ZNxYxoMaLAp3QEJcI_ThTFtiiq8GQ9F-1IYT-x5mYD87BApePKRn-00f6M&usqp=CAU" alt="Fisioterapia" />
+          <ImagenesCarrusel src="/images/20002.JPG"  alt="Psicologia" />
           <Carousel.Caption>
-            <h3 style={{ color: 'blue' }}>Fisioterapia</h3>
+            <h3 style={{color: 'black' , fontSize: '50px' }}>Psicología</h3>
           </Carousel.Caption>
         </Carousel.Item>
+
         <Carousel.Item>
-          <ImagenesCarrusel src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYJuoruYefoUXTQMW7iz83mGmFQaDVPUJjUjUW-FbF5zdxCLVFiXXOY-Rqc6ExATFHJoQ&usqp=CAU" alt="Ortopedia" />
+          <ImagenesCarrusel src="/images/20003.jpg"  alt="Ortopedia" />
           <Carousel.Caption>
-            <h3 style={{ color: 'blue' }}>Ortopedia</h3>
+            <h3 style={{ color: 'black' , fontSize: '50px' }}>Ortopedia</h3>
           </Carousel.Caption>
         </Carousel.Item>
+
         <Carousel.Item>
-          <ImagenesCarrusel src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSjm-9uV9QDVCYYMVyVzdXx4eVcOYI0frbhIw7d8vXfLxiN01eSD5mCdc9ToQi8ZJHNPU&usqp=CAU" alt="Neumologia" />
+          <ImagenesCarrusel src="/images/20007.jpg"  alt="Medicina General" />
           <Carousel.Caption>
-            <h3 style={{ color: 'blue' }}>Neumologia</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <ImagenesCarrusel src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBDleZcrOZx2LEfsC_e64N9XKwJ5a1Hju6rFCGe5zUN-VHpBP3VewRi1OcMKa6j9XQaik&usqp=CAU" alt="Medicina General" />
-          <Carousel.Caption>
-            <h3 style={{ color: 'blue' }}>Medicina General</h3>
+            <h3 style={{ color: 'black' , fontSize: '50px'}}>Medicina General</h3>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+      </div>
     </div>
   );
 };

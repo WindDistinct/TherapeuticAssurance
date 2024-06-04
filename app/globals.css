@@ -3,13 +3,11 @@
 @tailwind utilities;
 
 #presentacion{
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 98px;
+    padding-top: 30px;
 }
-#presentacion #login{
-    border: 1px solid #ff0000;
-    border-radius: 5px;
-}
+
+
 #presentacion #icono{
     width: 200px;
 }
@@ -87,4 +85,52 @@ margin-bottom: 60px ;
 .ptopbottom-1{
    
     padding: 10px 0;
+}
+
+.subtitulo {
+    padding-left: 100px;
+    padding-bottom: 50px;
+    color: #187ac9;
+    font-weight: bold;
+  }
+
+  .contenedor-carrusel {
+    width: 100%;
+    height: 500px;
+  }
+
+  .bg-custom {
+    background-color: #137090;
+  }
+
+  .link-custom {
+    color: white;
+    font-weight: bold;
+    font-size: 23px;
+  }
+
+  .custom-button {
+    width: 250px;
+    height: 72px;
+    background-color: #137090;
+    color: white;
+    font-weight: bold;
+    margin: 50px; 
+    border-radius: 20px;
+}
+
+
+#loginn{
+    width: 39%;
+    border: 4px solid #137090;
+    border-radius: 26px;
+    align-content: center;
+    text-align: center;
+    padding: 50px;
+
+
+}
+
+#hola{
+margin-right: 90px;
 }

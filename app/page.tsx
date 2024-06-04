@@ -14,10 +14,13 @@ export default function Home() {
             <br/><br/><br/><br/><br/>
             <main>
               <Presentacion></Presentacion>
+              <br/><br/><br/><br/><br/>
+            
               <Carrusel></Carrusel>
             </main>
             <ButtonMenu/>
-            <br/><br/><br/><br/><br/>
+
+
             <Footer/>
           </>
             

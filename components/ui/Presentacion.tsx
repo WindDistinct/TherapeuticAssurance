@@ -7,7 +7,7 @@ const Presentacion: React.FC = () => {
   return <div>
     <div id="presentacion" className='row'>
         <div id="hola" className="col-6">
-            <div className="row pt-3 pb-3"><h1>Hacemos tu tratamiento médico simple.</h1></div>
+            <div  ><h1 style={{ color: '#187ac9', fontWeight: 'bold' }}>Hacemos tu tratamiento médico simple.</h1></div>
 			<div className="row"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -15,15 +15,17 @@ const Presentacion: React.FC = () => {
             <div className="row">
 				<div className="col-6">
 					<div className="row"><img id="icono" src="/images/kit.png"></img></div>
-					<div className="row"><h2>Productos</h2></div>
+					<div className="row"><h2 style={{ color: '#137090'}} >Productos</h2></div>
 				</div>
 				<div className="col-6">
 					<div className="row"><img id="icono" src="/images/kit.png"></img></div>
-					<div className="row"><h2>Consultas Médicas</h2></div>
+					<div className="row"><h2 style={{ color: '#137090'}} >Consultas Médicas</h2></div>
 				</div>
 			</div>
         </div>
-        <div id="login" className="col-6 text-center d-flex justify-content-center align-items-center">
+
+
+        <div id="loginn" className="col-6 text-center d-flex justify-content-center align-items-center">
             <LoginPage />
         </div>
     </div>
