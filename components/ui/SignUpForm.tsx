@@ -2,6 +2,10 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { useEffect } from "react";
+import { Container, Form, Row } from "react-bootstrap";
+import Header from "./Header";
+import Footer from "./Footer";
+import Link from "next/link";
 
 export default function SignUpForm() {
     
@@ -63,48 +67,74 @@ export default function SignUpForm() {
     
     return (
         <>
-            <h1>
+        <Header></Header>
+        <div  className="contenedorNuevoForm " >
+            <Form style={{margin:'130px'}}>
+                <Row>
+                <h1 className="mb-4 text-center tituloNuevoForm" >
                 {loading ? 'Procesando...' : "Cree su cuenta"}
-            </h1>
+                 </h1>
+                <Form.Group  style={{ paddingBottom: '50px' }}>
+                    <Form.Label className="subNuevoForm">Usuario</Form.Label>
+                    <Form.Control
+                    type="text" 
+                    value={user.username} 
+                    onChange={(e) => setUser({...user, username: e.target.value})} 
+                    placeholder="Ingrese su usuario"
+                    >
+                    </Form.Control>
+                 </Form.Group>    
+
             <br/>
-            <input 
-                type="text" 
-                value={user.username} 
-                onChange={(e) => setUser({...user, username: e.target.value})} 
-                placeholder="Tu usuario..."
-            />
+                 <Form.Group style={{ paddingBottom: '50px' }}>
+                    <Form.Label className="subNuevoForm">Correo</Form.Label>
+                    <Form.Control
+                    type="email" 
+                    value={user.email} 
+                    onChange={(e) => setUser({...user, email: e.target.value})} 
+                    placeholder="Ingrese su correo"
+                    >
+                    </Form.Control>
+                </Form.Group>  
+            <br/>
+                <Form.Group style={{ paddingBottom: '50px' }}>
+                        <Form.Label className="subNuevoForm">Contraseña</Form.Label>
+                        <Form.Control
+                        type="password" 
+                        value={user.password} 
+                        onChange={(e) => setUser({...user, password: e.target.value})} 
+                        placeholder="Ingrese su contraseña"
+                        >
+                        </Form.Control>
+                </Form.Group>  
+            <br/>
+                <Form.Group style={{ paddingBottom: '50px' }}>
+                            <Form.Label className="subNuevoForm">Confirmar Contraseña</Form.Label>
+                            <Form.Control
+                            type="password" 
+                            value={confirmPassword} 
+                            onChange={(e) => setConfirmPassword(e.target.value)} 
+                            placeholder="Confirmar contraseña ingresada"
+                            >
+                            </Form.Control>
+                </Form.Group>  
             <br/>
             <br/>
-            <input 
-                type="email" 
-                value={user.email} 
-                onChange={(e) => setUser({...user, email: e.target.value})} 
-                placeholder="Tu correo..."
-            />
-            <br/>
-            <br/>
-            <input 
-                type="password" 
-                value={user.password} 
-                onChange={(e) => setUser({...user, password: e.target.value})} 
-                placeholder="Tu contraseña..."
-            />
-            <br/>
-            <br/>
-            <input 
-                type="password" 
-                value={confirmPassword} 
-                onChange={(e) => setConfirmPassword(e.target.value)} 
-                placeholder="Confirmar contraseña..."
-            />
-            <br/>
-            <br/>
-            <button onClick={syncPassword}>
-                {buttonDisabled ? 'Registrarse' : 'Registrarme ahora'}
+            <button onClick={syncPassword}
+                    className={`botonNuevoForm mx-auto ${buttonDisabled ? 'disabled' : ''}`}
+                    disabled={buttonDisabled}
+            >
+            
+                {buttonDisabled ? 'Ingrese sus datos para registrarse' : 'Registrarme ahora'}
             </button>
             <br/>
             <br/>
-            {error && <p style={{color: 'red'}}>{error}</p>}
-        </>
+            {error && <p className="mt-3 text-center" style={{ color: 'red' }}>{error}</p>}
+            <Link className="espacio" href="/ "> Volver a la pagina de Inicio </Link>      
+                </Row>
+            </Form>
+        </div>
+        <Footer></Footer>
+    </>
     );
 }

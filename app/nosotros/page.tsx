@@ -20,7 +20,7 @@ export default function nosotros() {
 
         <div className="container ">
 
-            <h2 className=" fs-1 mbottom-6">NOSOTROS</h2>
+            <h2 className=" fs-1 mbottom-6" style={{ color: '#137090'}}>NOSOTROS</h2>
 
 
             <div className="row " >
@@ -29,9 +29,9 @@ export default function nosotros() {
                 </div>
 
 
-                <div className="col-12 col-sm-6 col-lg-6 pleft-6"  >
+                <div className="col-12 col-sm-6 col-lg-6 pleft-6"  > 
                                                             
-                    <h3  >¿QUIÉNES SOMOS?</h3>
+                    <h3 style={{ color: '#115369'}} >¿QUIÉNES SOMOS?</h3>
                     <p className="text-justify">
 
                         Somos una <span className="font-semibold">empresa farmacéutica</span> comprometida con la salud y
@@ -62,7 +62,7 @@ export default function nosotros() {
 
                 <div className="col-12 col-sm-6 col-lg-6 pright-6"   >
                                                             
-                    <h3>¿A QUÉ SE DEDICA LA EMPRESA?</h3>
+                    <h3 style={{ color: '#115369'}}>¿A QUÉ SE DEDICA LA EMPRESA?</h3>
                 
                     <p className="text-justify">
                         <span className="font-semibold">Importación y Comercialización :</span> 
@@ -106,7 +106,7 @@ export default function nosotros() {
 
                 <div className="pr-60 col-12 col-sm-6 col-lg-6  pright-6"  >
                                                             
-                    <h3 className="">MISIÓN</h3>
+                    <h3 className="" style={{ color: '#115369'}}>MISIÓN</h3>
                 
                     <p className="tj ">
                         En [Nombre de la Farmacia], nos comprometemos a proporcionar
@@ -124,7 +124,7 @@ export default function nosotros() {
 
                 <div className="col-12 col-sm-6 col-lg-6  pleft-6"  >
                                                             
-                    <h3 >VISIÓN</h3>
+                    <h3 style={{ color: '#115369'}}>VISIÓN</h3>
                 
                     <p className="tj ">
 

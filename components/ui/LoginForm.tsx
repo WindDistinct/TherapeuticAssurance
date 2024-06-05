@@ -41,7 +41,7 @@ export default function LoginForm() {
 
     return(
         <>
-            <h1>
+            <h1 style={{ color: '#137090', fontWeight: 'bold' }}>
                 {loading ? 'Accediendo a la cuenta' : 'Inicio de sesión'}
             </h1>
             <br/>
@@ -50,7 +50,8 @@ export default function LoginForm() {
                 type="email" 
                 value={user.email} 
                 onChange={(e) => setUser({...user, email: e.target.value})} 
-                placeholder="Tu correo..."
+                placeholder="Ingrese su correo"
+                className="input-custom"
             />
             <br/>
             <br/>
@@ -58,12 +59,13 @@ export default function LoginForm() {
                 type="password" 
                 value={user.password} 
                 onChange={(e) => setUser({...user, password: e.target.value})} 
-                placeholder="Tu contraseña..."
+                placeholder="Ingrese su contraseña"
+                className="input-custom"
             />
             <br/>
             <br/>
-            <button onClick={onLogin}>
-                {buttonDisabled ? 'Ingresa tus datos' : 'Iniciar sesión'}
+            <button onClick={onLogin} style={{ color: buttonDisabled ? 'red' : 'blue' }}>
+                {buttonDisabled ? 'Ingrese tus datos para iniciar sesión' : 'Haga CLICK AQUÍ para Iniciar sesión'}
             </button>
             <br/>
             <br/>

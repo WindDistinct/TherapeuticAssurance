@@ -15,6 +15,7 @@ const ImagenesCarrusel: React.FC<ImagenesCarruselProps> = ({ src, alt }) => {
     width={650}
     height={500}
     objectFit="contain"
+    style={{ filter: 'brightness(0.9)', opacity: '0.7'}}
 
   />
   );

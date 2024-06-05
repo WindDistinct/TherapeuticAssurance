@@ -13,10 +13,17 @@ export default function Header(){
                                 <img src="/images/logo.png" alt="Logo" className="" />
                             </Link>
                             <nav className="flex justify-items-center items-center  gap-x-6">
+                            <Link 
+                                        href="/ " className="link-custom"
+                                >                                    
+                                    INICIO                                
+                                </Link>
+
+                                
                                 <Link 
                                         href="/nosotros" className="link-custom"
                                 >                                    
-                                    INICIO                                
+                                    NOSOTROS                              
                                 </Link>
                                 <Link 
                                         href="/productos" className="link-custom"

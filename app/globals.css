@@ -127,10 +127,65 @@ margin-bottom: 60px ;
     align-content: center;
     text-align: center;
     padding: 50px;
+    background-color: #c7e5f1;
 
 
 }
 
 #hola{
 margin-right: 90px;
+}
+
+.input-custom {
+    border: 2px solid black;
+    background-color: lightgrey;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.contenedorNuevoForm {
+    background-color: #e0f7fa;
+    border-radius: 30px;
+    border: 4px solid   #137090;
+    margin: 80px auto;
+    width: 38%;
+
+}
+
+.tituloNuevoForm {
+    color:  #137090;
+    font-weight: bold;
+}
+
+.subNuevoForm{
+    color: #187ac9;
+    font-size: 20px;
+}
+
+.botonNuevoForm {
+    background-color: rgb(36, 109, 61);
+    border-color: rgb(36, 109, 61);
+    color: wheat;
+    border-radius: 20px; 
+    font-weight: bold;
+    width: 350px !important;
+}
+
+
+.botonNuevoForm.disabled {
+    background-color: rgb(58, 124, 217);
+    color: wheat;
+    border-color: rgb(58, 124, 217);
+    border-radius: 20px;
+    font-weight: bold; 
+    width: 350px !important;
+    
+
+}
+
+.espacio{
+    padding-top: 30px;
+    text-align: center;
 }

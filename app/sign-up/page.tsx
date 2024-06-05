@@ -10,21 +10,13 @@ export default function SignUpPage() {
     return(
         <>
             <div>
-                <SignUpForm/>
-                <br/><br/>
-                <Link href={"/login"}>
-                    <p>
-                        Tienes una cuenta?{' '}
-                        <span>Inicia sesión aquí</span>
-                    </p>
-                </Link>
-                <br/>
-                <br/>
-                <Link href={"/"}>
-                    <p>
-                        <FaAngleLeft>Volver al inicio</FaAngleLeft>
-                    </p>
-                </Link>
+                <SignUpForm>
+
+
+                </SignUpForm>
+
+            
+               
             </div>
         </>
     )
