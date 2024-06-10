@@ -1,7 +1,9 @@
 import axios from "axios";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { FaAngleLeft } from "react-icons/fa";
 
 export default function LoginForm() {
     const router = useRouter();
@@ -16,6 +18,21 @@ export default function LoginForm() {
     const [loading, setLoading] = React.useState(false);
 
     const [error, setError] = React.useState('');
+
+    const regexEmail: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    const [mailSubmitted, mailIsSubmitted] = React.useState(false);
+    const [passSubmitted, passIsSubmitted] = React.useState(false);
+
+    const onEmailChange = (e:any) => {
+        setUser({...user, email : e.target.value})
+        mailIsSubmitted(true);
+    };
+    
+    const onPassChange = (e:any) => {
+        setUser({...user, password : e.target.value})
+        passIsSubmitted(true);
+    };
 
     const onLogin = async () => {
         try {
@@ -41,35 +58,101 @@ export default function LoginForm() {
 
     return(
         <>
-            <h1 style={{ color: '#137090', fontWeight: 'bold' }}>
-                {loading ? 'Accediendo a la cuenta' : 'Inicio de sesión'}
-            </h1>
-            <br/>
-            <br/>
-            <input 
-                type="email" 
-                value={user.email} 
-                onChange={(e) => setUser({...user, email: e.target.value})} 
-                placeholder="Ingrese su correo"
-                className="input-custom"
-            />
-            <br/>
-            <br/>
-            <input 
-                type="password" 
-                value={user.password} 
-                onChange={(e) => setUser({...user, password: e.target.value})} 
-                placeholder="Ingrese su contraseña"
-                className="input-custom"
-            />
-            <br/>
-            <br/>
-            <button onClick={onLogin} style={{ color: buttonDisabled ? 'red' : 'blue' }}>
-                {buttonDisabled ? 'Ingrese tus datos para iniciar sesión' : 'Haga CLICK AQUÍ para Iniciar sesión'}
-            </button>
-            <br/>
-            <br/>
-            {error && <p style={{color: 'red'}}>{error}</p>}
+            <form className=" row g-3">
+
+                <h1 className="text-primario fw-bolder">
+                    {loading ? 'Accediendo a la cuenta' : 'Inicio de sesión'}
+                </h1>
+
+                <div className="col-12 mt-5">
+
+                    <div className="input-group has-validation">
+
+                        <span className="input-group-text" id="inputGroupPrepend3">
+
+                            <i className="fa-solid fa-user"></i>
+
+                        </span>
+
+                        <input 
+                                type="email" 
+                                value={user.email} 
+                                onChange={onEmailChange} 
+                                placeholder="Tu Usuario"
+                                className={`form-control ${mailSubmitted ? ((regexEmail.test(user.email)) ? "is-valid" : "is-invalid") : "" }`}
+                                id="validationServerUsername" 
+                                aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
+                                required 
+                        />
+
+                        <div className="valid-feedback"></div>
+
+                        {mailSubmitted && !regexEmail.test(user.email) && (
+                            <div id="validationServerUsernameFeedback" className="invalid-feedback">
+            
+                                Por favor Ingrese su usuario.
+            
+                            </div>
+                        )}
+        
+                    </div>
+                </div>
+
+                <div className="col-12 mt-4">
+
+                    <div className="input-group has-validation">
+                        
+                        <span className="input-group-text" id="inputGroupPrepend4">
+                        
+                            <i className="fa-solid fa-lock"></i>
+                        
+                        </span>
+                        
+                        <input 
+                                type="password" 
+                                value={user.password} 
+                                onChange={onPassChange} 
+                                placeholder="Tu Password"
+
+                                className={`form-control ${passSubmitted ? ((user.password.length>0) ? "is-valid" : "is-invalid") : "" }`}
+                                id="validationServerPassword"
+                                aria-describedby="inputGroupPrepend3 validationServerPasswordFeedback" required
+                        />
+                        
+                        {passSubmitted && user.password.length === 0 && (
+                             <div id="validationServerPasswordFeedback" className="invalid-feedback">
+
+                                Por favor Ingrese su Contraseña.
+ 
+                            </div>
+                        )}
+                       
+
+                    </div>
+
+                </div>
+
+                <div className="col-12">
+
+                    <button onClick={onLogin} className={`mt-3 btn btn-primary border-0 text-white ${buttonDisabled ? 'bg-danger' : 'blue'}`} type="submit">
+
+                        {buttonDisabled ? 'Ingrese sus credenciales' : 'Iniciar Sesión'}
+            
+                    </button>
+                    
+                </div>
+                <br/>
+                <br/>
+                {error && <p className="btn btn-danger" >{error}</p>}
+            </form>    
+            <Link className="d-block mt-3" href={"/sign-up"}>
+                Aún no tienes una cuenta?{' '}
+                <span>Crea una aquí</span>
+            </Link>
+            <Link className="d-block mt-2" href={"/sign-up"}>
+                Olvidaste tu contraseña?{' '}
+                <span>Recuperala aquí</span>
+            </Link>
         </>
     );
 }

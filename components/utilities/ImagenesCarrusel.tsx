@@ -9,15 +9,13 @@ interface ImagenesCarruselProps {
 const ImagenesCarrusel: React.FC<ImagenesCarruselProps> = ({ src, alt }) => {
   return (
     <Image
-    className="d-block w-30"
-    src={src}
-    alt={alt}
-    width={650}
-    height={500}
-    objectFit="contain"
-    style={{ filter: 'brightness(0.9)', opacity: '0.7'}}
-
-  />
+      className="w-100"
+      src={src}
+      alt={alt}
+      width={900}
+      height={900}  
+      style={{ filter: 'brightness(0.9)', opacity: '0.7'}}
+    />
   );
 };
 

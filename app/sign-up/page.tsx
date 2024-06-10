@@ -12,11 +12,7 @@ export default function SignUpPage() {
             <div>
                 <SignUpForm>
 
-
                 </SignUpForm>
-
-            
-               
             </div>
         </>
     )

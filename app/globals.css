@@ -7,96 +7,124 @@
     padding-top: 30px;
 }
 
-
 #presentacion #icono{
     width: 200px;
 }
 
-.contenedor
-{
-
-    width:90%;
-    max-width:1250px;
-    margin:auto;
-
-
-}
-
 #quienes-somos
 {
-
     padding-right: 40px;
-    background-image: url(https://e.rpp-noticias.io/xlarge/2022/01/18/124312_1204340.jpg);
+    background-image: url(https://clinicagirona.cat/wp-content/uploads/revslider/slider-1/DSC_0385_retocada.jpg);
     background-size: cover;
     background-position: center;
-     height: 300px;
-
+    height: 300px;
 }
 
 #a-que-se-dedica-la-empresa{
-
     padding-right: 40px;
     background-image: url(https://www.elfarmaceutico.es/uploads/s1/73/35/9/1f01710f32df2dc74ef1fc466f3c05d9.jpeg);
     background-size: cover;
     background-position: center;
      height: 300px;
-
-
-
-
 }
-.tj{
-   
+
+/*GLOBALES*/
+a{
+    text-decoration: none!important; 
+ }
+ 
+/*UTILIDADES*/
+.contenedor
+{
+    width:90%;
+    max-width:1250px;
+    margin:auto;
+}
+
+.contenedor-carrusel 
+{
+    width: 100%;
+    height: 500px;
+}
+
+.overflow-hidden
+{
+    overflow:hidden;
+}
+
+.margin-bottom-15
+{
+    margin-bottom: 150px;
+}
+
+.margin-bottom-8
+{
+    margin-bottom: 80px;
+}
+
+.margin-bottom-4
+{
+    margin-bottom: 40px;
+}
+
+.height-7
+{
+    height: 70px;
+}
+
+.text-justify
+{
     text-align: justify;
-
 }
 
-.mtop-7
+.border-radius-20
 {
-
-    margin-top: 70px;
-
+    border-radius: 20px!important;
 }
-.mtop-6
+
+.h-2{
+    color:#075CC9;
+    font-size: 60px;  
+}
+
+.h-3
 {
-
-    margin-top: 60px;
-
+    color:#075CC9;
+    font-size: 40px;
 }
 
-.mbottom-6{
-
-margin-bottom: 60px ;
-
+/*BACKGROUND*/
+.bg-primario
+{
+    background-color: #075CC9;
 }
 
-.mright-2{
-
-    margin-right: 20px;
+.text-primario
+{
+    color: #075CC9;
 }
 
-.pright-6{
-    padding-right: 60px!important;
-}
-.pleft-6{
-    padding-left: 60px!important;
+.position-relative{
+    position: relative;
 }
 
-.ptopbottom-1{
-   
-    padding: 10px 0;
+.position-absolute{
+    position: absolute;
 }
 
-.subtitulo {
+.left-0{
+    left: 0;
+}
+
+.right-0{
+    right: 0;
+}
+
+/*.subtitulo {
     padding-left: 100px;
     padding-bottom: 50px;
     color: #187ac9;
     font-weight: bold;
-  }
-
-  .contenedor-carrusel {
-    width: 100%;
-    height: 500px;
   }
 
   .bg-custom {
@@ -104,9 +132,7 @@ margin-bottom: 60px ;
   }
 
   .link-custom {
-    color: white;
     font-weight: bold;
-    font-size: 23px;
   }
 
   .custom-button {
@@ -119,21 +145,11 @@ margin-bottom: 60px ;
     border-radius: 20px;
 }
 
-
 #loginn{
     width: 39%;
-    border: 4px solid #137090;
-    border-radius: 26px;
     align-content: center;
     text-align: center;
     padding: 50px;
-    background-color: #c7e5f1;
-
-
-}
-
-#hola{
-margin-right: 90px;
 }
 
 .input-custom {
@@ -151,7 +167,6 @@ margin-right: 90px;
     border: 4px solid   #137090;
     margin: 80px auto;
     width: 38%;
-
 }
 
 .tituloNuevoForm {
@@ -173,7 +188,6 @@ margin-right: 90px;
     width: 350px !important;
 }
 
-
 .botonNuevoForm.disabled {
     background-color: rgb(58, 124, 217);
     color: wheat;
@@ -181,11 +195,9 @@ margin-right: 90px;
     border-radius: 20px;
     font-weight: bold; 
     width: 350px !important;
-    
-
 }
 
 .espacio{
     padding-top: 30px;
     text-align: center;
-}
+}*/
