@@ -67,7 +67,6 @@ export default function SignUpForm() {
     
     return (
         <>
-        <Header></Header>
         <div  className="contenedorNuevoForm " >
             <Form style={{margin:'130px'}}>
                 <Row>
@@ -134,7 +133,6 @@ export default function SignUpForm() {
                 </Row>
             </Form>
         </div>
-        <Footer></Footer>
     </>
     );
 }

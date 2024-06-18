@@ -1,3 +1,4 @@
+import ContactForm from "@/components/ui/ContactForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function contactanos() {
 
                         <div className="col-12 h-20">
 
-                            <p>ACÁ IRÁ EL FORMULARIO DE CONTACTO</p>
+                            <ContactForm/>
 
                         </div>
                 

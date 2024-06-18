@@ -10,9 +10,7 @@ export default function SignUpPage() {
     return(
         <>
             <div>
-                <SignUpForm>
-
-                </SignUpForm>
+                <SignUpForm/>
             </div>
         </>
     )
