@@ -5,6 +5,7 @@ import { ChangeEvent, FormEvent, useState } from "react"
 import { Button, Form} from "react-bootstrap";
 
 export default function ContactForm() {
+    const [isSubmitted, setSubmitted] = useState(false);
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const [special,setSpecial] = useState('');
@@ -31,6 +32,10 @@ export default function ContactForm() {
                 }
             });
 
+            if (res.status === 200) {
+                setSubmitted(true);
+            }
+
             console.log('Respuesta del servidor:', res.data);
             
         } catch (error:any) {
@@ -40,7 +45,9 @@ export default function ContactForm() {
 
     return (
         <>
-
+            {isSubmitted ? (
+                <p className="text-success">Formulario enviado con éxito, nos estaremos contactando contigo lo antes posible</p>
+            ) : ("")}
             <Form onSubmit={onSubmit}>
                 <Form.Group className="mb-3">
                     <Form.Label controlId="formBasicText">Nombre completo:</Form.Label>
