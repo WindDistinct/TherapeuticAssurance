@@ -1,9 +1,9 @@
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { ChangeEvent, useEffect } from "react";
 import { useState } from "react";
-import { FaAngleLeft } from "react-icons/fa";
+import { Button, Form } from "react-bootstrap";
 
 export default function LoginForm() {
     const router = useRouter();
@@ -24,12 +24,12 @@ export default function LoginForm() {
     const [mailSubmitted, mailIsSubmitted] = React.useState(false);
     const [passSubmitted, passIsSubmitted] = React.useState(false);
 
-    const onEmailChange = (e:any) => {
+    const onEmailChange = (e:ChangeEvent<HTMLInputElement>) => {
         setUser({...user, email : e.target.value})
         mailIsSubmitted(true);
     };
     
-    const onPassChange = (e:any) => {
+    const onPassChange = (e:ChangeEvent<HTMLInputElement>) => {
         setUser({...user, password : e.target.value})
         passIsSubmitted(true);
     };
@@ -58,7 +58,7 @@ export default function LoginForm() {
 
     return(
         <>
-            <form className=" row g-3">
+            <Form className=" row g-3">
 
                 <h1 className="text-primario fw-bolder">
                     {loading ? 'Accediendo a la cuenta' : 'Inicio de sesión'}
@@ -134,17 +134,17 @@ export default function LoginForm() {
 
                 <div className="col-12">
 
-                    <button onClick={onLogin} className={`mt-3 btn btn-primary border-0 text-white ${buttonDisabled ? 'bg-danger' : 'blue'}`} type="submit">
+                    <Button onClick={onLogin} className={`mt-3 btn btn-primary border-0 text-white ${buttonDisabled ? 'bg-danger' : 'blue'}`} type="submit">
 
                         {buttonDisabled ? 'Ingrese sus credenciales' : 'Iniciar Sesión'}
             
-                    </button>
+                    </Button>
                     
                 </div>
                 <br/>
                 <br/>
                 {error && <p className="btn btn-danger" >{error}</p>}
-            </form>    
+            </Form>    
             <Link className="d-block mt-3" href={"/sign-up"}>
                 Aún no tienes una cuenta?{' '}
                 <span>Crea una aquí</span>

@@ -2,9 +2,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { useEffect } from "react";
-import { Container, Form, Row } from "react-bootstrap";
-import Header from "./Header";
-import Footer from "./Footer";
+import { Button, Form, Row } from "react-bootstrap";
 import Link from "next/link";
 
 export default function SignUpForm() {
@@ -44,7 +42,7 @@ export default function SignUpForm() {
     }
 
     
-    const syncPassword = async (e:any) => {
+    const syncPassword = async () => {
         if (user.password !== confirmPassword) {
             setError("Las contraseñas no coinciden");
         } else {
@@ -57,13 +55,14 @@ export default function SignUpForm() {
         if (
             user.username.length > 0 &&
             user.email.length > 0 &&
-            user.password.length > 0 
+            user.password.length > 0 &&
+            confirmPassword.length > 0 
         ) {
             setButtonDisabled(false);
         } else {
             setButtonDisabled(true);
         }
-    }, [user])
+    }, [confirmPassword.length, user])
     
     return (
         <>
@@ -83,8 +82,6 @@ export default function SignUpForm() {
                     >
                     </Form.Control>
                  </Form.Group>    
-
-            <br/>
                  <Form.Group style={{ paddingBottom: '50px' }}>
                     <Form.Label className="subNuevoForm">Correo</Form.Label>
                     <Form.Control
@@ -95,7 +92,6 @@ export default function SignUpForm() {
                     >
                     </Form.Control>
                 </Form.Group>  
-            <br/>
                 <Form.Group style={{ paddingBottom: '50px' }}>
                         <Form.Label className="subNuevoForm">Contraseña</Form.Label>
                         <Form.Control
@@ -106,7 +102,6 @@ export default function SignUpForm() {
                         >
                         </Form.Control>
                 </Form.Group>  
-            <br/>
                 <Form.Group style={{ paddingBottom: '50px' }}>
                             <Form.Label className="subNuevoForm">Confirmar Contraseña</Form.Label>
                             <Form.Control
@@ -117,17 +112,12 @@ export default function SignUpForm() {
                             >
                             </Form.Control>
                 </Form.Group>  
-            <br/>
-            <br/>
-            <button onClick={syncPassword}
+            <Button onClick={syncPassword}
                     className={`botonNuevoForm mx-auto ${buttonDisabled ? 'disabled' : ''}`}
                     disabled={buttonDisabled}
             >
-            
                 {buttonDisabled ? 'Ingrese sus datos para registrarse' : 'Registrarme ahora'}
-            </button>
-            <br/>
-            <br/>
+            </Button>
             {error && <p className="mt-3 text-center" style={{ color: 'red' }}>{error}</p>}
             <Link className="espacio" href="/ "> Volver a la pagina de Inicio </Link>      
                 </Row>

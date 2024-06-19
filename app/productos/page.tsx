@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link"
 
-export const metadata: Metadata = {
-    title: "Therapeutic Assurance",
-    description: "Tratamientos especializados por profesionales dedicados"
-};  
-
 export default function contactanos() {
 
     return (  

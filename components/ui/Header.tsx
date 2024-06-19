@@ -1,6 +1,5 @@
-import Image from 'next/image';
 import Link from "next/link"
-import ReactDOM from 'react-dom'
+import { Image } from "react-bootstrap";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function Header(){
@@ -12,7 +11,7 @@ export default function Header(){
                         <div className="contenedor  flex justify-between  height-7">
 
                             <Link href="/" >
-                                <img src="/images/logo.png" alt="Logo" className="" />
+                                <Image src="/images/logo.png" alt="Logo" className="" />
                             </Link>
 
                             <nav className="flex justify-items-center items-center  gap-x-6">

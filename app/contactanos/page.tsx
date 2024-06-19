@@ -1,5 +1,6 @@
 import ContactForm from "@/components/ui/ContactForm";
 import type { Metadata } from "next";
+import { Container } from "react-bootstrap";
 
 export const metadata: Metadata = {
     title: "Therapeutic Assurance",
@@ -10,23 +11,23 @@ export default function contactanos() {
 
     return (  
         <>   
-            <section id="seccion-quienes-somos" className="mtop-6">
+            <section className="mtop-6 position-relative">
 
-                <div className="container ">
+                <Container className="my-5">
 
-                    <h2 className=" fs-1 mbottom-6">Contáctanos</h2>
+                    <div id="contacto" className="mx-auto p-2">
 
-                    <div className="row " >
+                        <h2>Contáctanos</h2>
 
-                        <div className="col-12 h-20">
+                    </div>
 
-                            <ContactForm/>
+                    <div className="col-12">
 
-                        </div>
-                
+                        <ContactForm/>
+
                     </div>
                 
-                </div>
+                </Container>
             
             </section>
                        

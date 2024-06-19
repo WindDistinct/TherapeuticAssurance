@@ -1,4 +1,3 @@
-import Image from "next/image"
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginPage from '@/app/login/page';
@@ -89,7 +88,7 @@ const Presentacion: React.FC = () => {
 					<div className="col-1"></div>
 				
 					<div id="login" className="col-5 card px-5 py-4 border-radius-20 col-5 text-center d-flex justify-content-center align-items-center">
-
+					
 						<LoginPage/>
 
 					</div>

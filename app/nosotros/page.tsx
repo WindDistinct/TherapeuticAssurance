@@ -1,12 +1,3 @@
-import type { Metadata } from "next";
-import Header from "@/components/ui/Header";
-import Footer from "@/components/ui/Footer";
-
-
-export const metadata: Metadata = {
-    title: "Therapeutic Assurance",
-    description: "Tratamientos especializados por profesionales dedicados"
-};
 
 export default function nosotros() {
 

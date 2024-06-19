@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import { ChangeEvent, FormEvent, useState } from "react"
+import { Button, Form} from "react-bootstrap";
 
 export default function ContactForm() {
     const [name,setName] = useState('');
@@ -40,19 +41,34 @@ export default function ContactForm() {
     return (
         <>
 
-            <form onSubmit={onSubmit}>
-                <input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Nombre"/>
-                <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email"/>
-                <select value={special} onChange={handleSpecialChange} name="special">
-                    <option value="">--Selecciones una especialidad--</option>
-                    <option value="Fisioterapia">Fisioterapia</option>
-                    <option value="Quiropractica">Quiropractica</option>
-                    <option value="Pedriatria">Pediatría</option>
-                </select>
-                <textarea value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        
+            <Form onSubmit={onSubmit}>
+                <Form.Group className="mb-3">
+                    <Form.Label controlId="formBasicText">Nombre completo:</Form.Label>
+                    <Form.Control value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Ingrese su nombre..."/>
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label controlId="formBasicEmail">E-mail:</Form.Label>
+                    <Form.Control value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Ingrese su correo..."/>
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>En que especialidad está interesado?</Form.Label>
+                    <Form.Select value={special} onChange={handleSpecialChange}>
+                        <option value="">--Selecciones una especialidad--</option>
+                        <option value="Fisioterapia">Fisioterapia</option>
+                        <option value="Quiropractica">Quiropractica</option>
+                        <option value="Pedriatria">Pediatría</option>
+                    </Form.Select>
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>Dejenos su consulta:</Form.Label>
+                    <Form.Control value={message} onChange={(e) => setMessage(e.target.value)}
+                        as="textarea"
+                        placeholder="Redacte su consulta..."
+                        style={{ height: '100px' }}
+                    />
+                </Form.Group>
+                <Button id="enviar" as="input" type="submit" value="Enviar" className="mx-auto p-2"/>
+            </Form>
         </>
     )
 }

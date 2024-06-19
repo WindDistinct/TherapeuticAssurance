@@ -11,6 +11,11 @@
     width: 200px;
 }
 
+#contacto, #enviar {
+    display: block;
+    width: 200px;
+}
+
 #quienes-somos
 {
     padding-right: 40px;
