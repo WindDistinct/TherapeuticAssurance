@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LoginPage from '@/app/login/page';
+import LoginForm from './LoginForm';
 
 const Presentacion: React.FC = () => {
   	return (
@@ -89,7 +89,7 @@ const Presentacion: React.FC = () => {
 				
 					<div id="login" className="col-5 card px-5 py-4 border-radius-20 col-5 text-center d-flex justify-content-center align-items-center">
 					
-						<LoginPage/>
+						<LoginForm/>
 
 					</div>
 				</div>
