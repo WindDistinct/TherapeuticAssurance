@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link"
+import Link from "next/link";
+
+
+
 
 export default function contactanos() {
+
+
+    
 
     return (  
         <>             
@@ -196,4 +202,3 @@ export default function contactanos() {
         </>      
     );
 }
-  
