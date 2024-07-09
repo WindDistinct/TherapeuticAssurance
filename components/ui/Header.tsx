@@ -25,7 +25,7 @@ export default function Header(){
                                 </Link>
 
                                 <Link href="/productos" className="text-black fw-normal link-custom">
-                                    NUESTROS PRODUCTO                                
+                                    CATALOGO                                
                                 </Link> 
 
                                 <Link href="/contactanos" className="text-black fw-normal link-custom">                                    

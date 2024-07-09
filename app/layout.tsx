@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "../components/ui/Header";
 import Footer from "@/components/ui/Footer";
+import { CartProvider } from "@/components/context/CartContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,9 +14,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <head>
@@ -32,13 +33,18 @@ export default function RootLayout({
 
       <body className={inter.className}>
 
-        <Header/>
+        <CartProvider>
 
-        {children}
+          <Header/>
 
-        <Footer/>
+          {children}
+
+          <Footer/>
+
+        </CartProvider>
         
-        </body>
+        
+      </body>
     </html>
   );
 }
