@@ -1,8 +1,8 @@
 import React from 'react';
-import { Producto } from '../productos/productosData'; // Importa la interfaz Producto
+import { Producto } from '../productos/productosData'; 
 
 interface ProductosProps {
-  producto: Producto; // Define un solo producto como prop
+  producto: Producto; 
 }
 
 const ProductosProps: React.FC<ProductosProps> = ({ producto }) => {
@@ -12,7 +12,7 @@ const ProductosProps: React.FC<ProductosProps> = ({ producto }) => {
         <img src={producto.imagen} className="card-img-top" alt={producto.nombre} />
         <div className="card-body">
           <h5 className="card-title">{producto.nombre}</h5>
-          <p className="card-text">Precio: ${producto.precio}</p>
+          <p className="card-text">Precio: {producto.precio}</p>
           <p className="card-text">Categoría: {producto.categoria}</p>
           <a href="#" className="btn btn-primary">
             Ver detalles
