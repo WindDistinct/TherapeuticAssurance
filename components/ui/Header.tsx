@@ -28,6 +28,10 @@ export default function Header(){
                                     CATALOGO                                
                                 </Link> 
 
+                                <Link href="/checkout" className="text-black fw-normal link-custom">
+                                    CARRITO                                
+                                </Link>
+
                                 <Link href="/contactanos" className="text-black fw-normal link-custom">                                    
                                     CONTÁCTANOS                                
                                 </Link>
