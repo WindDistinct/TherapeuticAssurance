@@ -1,37 +1,48 @@
 'use client';
 
-
 import  { useCart } from "@/components/context/CartContext";
 import axios from "axios";
 
 export default function Carrito() {
+
+    //Llama a los atributos del contexto
     const { cart, clearCart } = useCart();
 
-    const handleCheckout = async () => {
-        const products = cart.map(item => ({ productId: item.productId, cantidad: item.cantidad, precio: item.precio }));
-        const total = cart.reduce((acc, item) => acc + item.total, 0); // Calcula el total
+    //Calcula el total
+    const total = cart.reduce((acc, item) => acc + item.total, 0);
 
+    //Obtiene los productos del contexto
+    const handleCheckout = async () => {
+        //Conversión de los datos a un objeto
+        const products = cart.map(item => ({ productId: item.productId, 
+                                                cantidad: item.cantidad, 
+                                                precio: item.precio }));
+        
         try {
+            //Envio de los datos a la API
             await axios.post('/api/shop/orden', { products, total });
             clearCart();
-            alert('Compra realizada con éxito');
-        } catch (error) {
-            console.error('Error al realizar la compra:', error);
-            alert('Hubo un error al realizar la compra');
+        } catch (error:any) {
+            console.error('Error al realizar la compra:', error);   
         }
     };
 
     return (
-        <div>
-            <h1>Carrito de Compras</h1>
-            <ul>
+        <div id="checkout">
+            <h1 className="h-3 pb-5">Carrito de Compras</h1>
+            <ol className="list-group check">
                 {cart.map((item, index) => (
-                    <li key={index}>
-                        {item.nombre} - Cantidad: {item.cantidad} - Precio: ${item.precio} - Total: ${item.total}
+                    <li className="list-group-item d-flex justify-content-between align-items-start" key={index}>
+                        <div className="ms-2 me-auto">
+                            <div className="h4 fw-bold">{item.nombre}</div>
+                            Precio: ${item.precio} - Total: ${item.total}
+                        </div>
+                        <span className="badge text-bg-primary rounded-pill">Cantidad: {item.cantidad}</span>
                     </li>
                 ))}
-            </ul>
-            <button onClick={handleCheckout}>Proceder al pago</button>
+            </ol>
+            <p>Total: {total}</p>
+            <button onClick={handleCheckout} className="btn btn-primary mt-5 position-relative top-50 start-50 translate-middle">Proceder al pago</button>
         </div>
     );
 };

@@ -1,12 +1,11 @@
 import mongoose, { Document, Schema } from "mongoose";
 
-//Por qué se extiende como Documento???
 export interface IProduct extends Document {
     nombre: string;
     imagen: string;
-    precio: string;
+    precio: number;
     categoria: string;
-}
+};
 
 const ProductSchema: Schema = new Schema({
     nombre: { type: String, required: true },
