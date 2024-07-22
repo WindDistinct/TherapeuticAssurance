@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Image } from "react-bootstrap";
 import { FaWhatsapp } from "react-icons/fa";
+import ButtonLogOff from "./ButtonLogOff";
 
 export default function Header(){
 
@@ -39,6 +40,8 @@ export default function Header(){
                                 <Link className="text-black fw-normal link-custom flex items-center gap-x-1" href="https://api.whatsapp.com/send?phone=51914740170&text=Hola%20%2C%20deseo%20realizar%20una%20reserva%20" target="_blank">  
                                     <FaWhatsapp className="text-2xl"/> ( +51) 914-74-01-70
                                 </Link>
+
+                                <ButtonLogOff/>
                             </nav>
                         </div>
                     </header>

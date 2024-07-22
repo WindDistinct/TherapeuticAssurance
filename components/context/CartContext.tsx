@@ -33,7 +33,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
             const existingProductIndex = prevCart.findIndex(product => product.productId === productId);
             
             //Si existe
-            if (existingProductIndex !== -1) {
+            if (existingProductIndex >= 0) {
                 //Da el valor preexistente
                 const updatedCart = [...prevCart];
                 //Añade la nueva cantidad y calcula el precio

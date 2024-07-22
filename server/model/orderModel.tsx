@@ -3,6 +3,7 @@ import mongoose, { Document, Schema } from "mongoose";
 interface IOrder extends Document {
   productos: { productId: string; cantidad: number; precio: number }[];
   total: number;
+  creadoPor: { userId: string; username: string; email: string }[];
   creadoEl: Date;
 }
   
@@ -15,6 +16,13 @@ const OrderSchema: Schema = new Schema({
     }
   ],
   total: { type: Number, required: true },
+  creadoPor: [
+    {
+      userId: {type: Schema.Types.ObjectId, ref: 'User'},
+      username: {type: String},
+      email: {type: String}
+    }
+  ],
   creadoEl: { type: Date, default: Date.now }
 });
 

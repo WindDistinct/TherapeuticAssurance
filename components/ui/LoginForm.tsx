@@ -3,7 +3,7 @@
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { ChangeEvent, useEffect } from "react";
+import React, { ChangeEvent, FormEvent, useEffect } from "react";
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
@@ -39,9 +39,8 @@ export default function LoginForm() {
     const onLogin = async () => {
         try {
             setLoading(true);
-            const response = await axios.post('api/users/login', user);
-            console.log('Ingreso exitoso', response.data);
-            router.push("/profile");
+            axios.post('api/users/login', user);
+            console.log('Ingreso exitoso');
         } catch (error) {
             console.log("Error al encontrar usuario: " + error);
             setError("La cuenta ingresada no existe, revise las credenciales");
@@ -60,7 +59,7 @@ export default function LoginForm() {
 
     return(
         <>
-            <Form className=" row g-3">
+            <Form onSubmit={onLogin} className=" row g-3">
 
                 <h1 className="text-primario fw-bolder">
                     {loading ? 'Accediendo a la cuenta' : 'Inicio de sesión'}
@@ -136,7 +135,7 @@ export default function LoginForm() {
 
                 <div className="col-12">
 
-                    <Button onClick={onLogin} className={`mt-3 btn btn-primary border-0 text-white ${buttonDisabled ? 'bg-danger' : 'blue'}`} type="submit">
+                    <Button className={`mt-3 btn btn-primary border-0 text-white ${buttonDisabled ? 'bg-danger' : 'blue'}`} type="submit">
 
                         {buttonDisabled ? 'Ingrese sus credenciales' : 'Iniciar Sesión'}
             

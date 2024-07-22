@@ -3,11 +3,13 @@ import User from "@/server/model/userModel";
 import { NextRequest,NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
-
-connectToMongoDB();
+import { cookies } from "next/headers";
 
 //POST - Validar Usuario
 export async function POST(request: NextRequest) {
+    
+    await connectToMongoDB();
+    
     try {
         //Obtener la información del Body
         const reqBody = await request.json();
@@ -25,7 +27,7 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({
                 error: "No existe este usuario",  
             },
-            { status:400 })
+            { status:401 })
         }
         console.log(user);
 
@@ -34,7 +36,8 @@ export async function POST(request: NextRequest) {
         
         //No valida
         if (!validPassword) {
-            return NextResponse.json({error: "Contraseña erronea"}, {status:400})
+            console.log("Contraseña erronea");
+            return NextResponse.json({error: "Contraseña erronea"}, {status:401})
         }
 
         //Crear el token data
@@ -46,19 +49,21 @@ export async function POST(request: NextRequest) {
 
         //Crear el token con la información a recordar del usuario
         const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET!, {
-            expiresIn: "2d",
-        });
-
-        const response = NextResponse.json({
-            message: "Inicio de sesión exitoso",
-            success: true,
+            expiresIn: '2d',
         });
 
         //Enviar el token a las cookies del usuario
-        response.cookies.set('token',token, {httpOnly:true});
-        return response;
+        cookies().set('token',token, {httpOnly:true});
+        console.log("Inicio de sesión exitoso");
+        console.log(cookies());
+
+        return NextResponse.json({
+            message: "Inicio de sesión exitoso",
+            success: true,
+        }, { status:200 });;
         
     } catch(error:any) {
+        console.log("Hubo un error");
         return NextResponse.json({error: error.message}, {status:500})
     }
 }
