@@ -17,9 +17,11 @@ export interface Product {
 
 export default function Catalogo() {
 
+
   const [products, setProducts] = useState<Product[]>([]);
 
   const [category, setCategory] = useState<string | null>(null);
+  const [unidades, setUnidades] = useState<number>(1); // Usar 'string' en minúscula
 
   //Actualizar el contexto
   const { addToCart } = useCart();
@@ -42,8 +44,34 @@ export default function Catalogo() {
 
     fetchProducts();
     
-  }, [category]);
+  }, []);
   
+
+  const actualizarUnidadesAPedir = (id,unidades)=>
+    {
+
+        const updateProducts = [...products]
+
+        for(let i=0 ; i<updateProducts.length ; i++)
+          {
+
+              if(updateProducts[i]._id==id)
+                {
+
+                    updateProducts[i].unidades=unidades;
+
+                }
+
+
+          }
+          console.log(updateProducts);
+
+          setProducts(updateProducts);
+
+    }
+
+
+
   return (  
     <>             
       <section id="seccion-productos">
@@ -64,7 +92,20 @@ export default function Catalogo() {
                     <h5 className="card-title">{product.nombre}</h5>
                     <p className="card-text">Precio: {product.precio}</p>
                     <p className="card-text">Categoría: {product.categoria}</p>
-                    <span onClick={() => addToCart(product._id, product.nombre, product.precio, 1)} className="btn btn-primary">
+                    <p className="mt-3">
+                    <label htmlFor="">Cantidad</label>
+                    <input 
+                                className="border w-100px bg-primary text-white text-center rounded ml-5" 
+                                type="number"
+                                value={!product.unidades ? 1 : product.unidades}
+                                onChange={(e)=>{actualizarUnidadesAPedir(product._id, e.target.value ) }}
+                                min="1"
+                                step="1"
+                      />
+
+
+                    </p>
+                    <span onClick={() => addToCart(product._id, product.nombre, product.precio, !product.unidades ? 1 : product.unidades)} className="btn btn-primary">
                       Añadir al carrito
                     </span>
                   </div>

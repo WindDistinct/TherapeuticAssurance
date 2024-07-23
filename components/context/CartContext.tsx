@@ -54,8 +54,57 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     //Limpia el carro
     const clearCart = () => setCart([]);
 
+    const deleteProduct = (index:number)=>{
+
+
+        let eliminar = confirm("¿Está seguro de eliminar este producto?");
+        if(!eliminar)
+        {
+            return;
+
+        }
+
+                                       let updateCart =[];
+
+                                       for(let i=0 ; i<cart.length; i++)
+                                        { 
+
+                                            if(index!=i) 
+                                            { 
+
+                                                 updateCart.push(cart[i]);       
+
+                                             }       
+
+                                       }
+                                        setCart(updateCart);
+
+
+                                        console.log("TRATANDO DE ELIMINAR PRODUCTO DEL CARRITO "+index);
+
+                              }
+
+    const updateUnits = (index:number,unidades:number)=>{
+
+    let updateCart = [...cart] ;
+
+    updateCart[index].cantidad=unidades; 
+    updateCart[index].total=unidades*updateCart[index].precio; 
+
+    setCart(updateCart);
+
+
+        console.log("TRATANDO cambiar unidades "+updateCart[index].cantidad);
+
+}                          
+
+
+
+
+
+
     return (
-        <CartContext.Provider value={{ cart, addToCart, clearCart }}>
+        <CartContext.Provider value={{ cart, addToCart, clearCart,deleteProduct,updateUnits }}>
             {children}
         </CartContext.Provider>
     )

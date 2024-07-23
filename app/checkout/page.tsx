@@ -6,7 +6,7 @@ import axios from "axios";
 export default function Carrito() {
 
     //Llama a los atributos del contexto
-    const { cart, clearCart } = useCart();
+    const { cart, clearCart , deleteProduct,updateUnits } = useCart();
 
     //Calcula el total
     const total = cart.reduce((acc, item) => acc + item.total, 0);
@@ -27,6 +27,7 @@ export default function Carrito() {
         }
     };
 
+    console.log(cart);
     return (
         <div id="checkout">
             <h1 className="h-3 pb-5">Carrito de Compras</h1>
@@ -35,13 +36,33 @@ export default function Carrito() {
                     <li className="list-group-item d-flex justify-content-between align-items-start" key={index}>
                         <div className="ms-2 me-auto">
                             <div className="h4 fw-bold">{item.nombre}</div>
-                            Precio: ${item.precio} - Total: ${item.total}
+                            Precio: ${item.precio} - Total: ${(item.total).toFixed(5)}
+                            <div className="mt-3">
+                                <label htmlFor="">Cantidad</label>
+                                <input 
+                                            className="border w-100px bg-primary text-white text-center rounded ml-5" 
+                                            type="number"
+                                            value={item.cantidad}
+                                            onChange={(e)=>{updateUnits(index,parseInt(e.target.value))}}
+                                            min="1"
+                                            step="1"
+                                  />
+
+
+                            </div>
+
+                            
                         </div>
-                        <span className="badge text-bg-primary rounded-pill">Cantidad: {item.cantidad}</span>
+                       <div>
+
+                            <button onClick={()=>{deleteProduct(index)}} className="btn btn-danger rounded-pill">X</button>
+                          
+                            
+                       </div>
                     </li>
                 ))}
             </ol>
-            <p>Total: {total}</p>
+            <p className="mt-5">Total: $ {total.toFixed(5)}</p>
             <button onClick={handleCheckout} className="btn btn-primary mt-5 position-relative top-50 start-50 translate-middle">Proceder al pago</button>
         </div>
     );
