@@ -13,6 +13,7 @@ export interface Product {
   imagen: string;
   precio: number;
   categoria: string;
+  unidades: number;
 }
 
 export default function Catalogo() {
@@ -21,7 +22,6 @@ export default function Catalogo() {
   const [products, setProducts] = useState<Product[]>([]);
 
   const [category, setCategory] = useState<string | null>(null);
-  const [unidades, setUnidades] = useState<number>(1); // Usar 'string' en minúscula
 
   //Actualizar el contexto
   const { addToCart } = useCart();
@@ -44,10 +44,10 @@ export default function Catalogo() {
 
     fetchProducts();
     
-  }, []);
+  }, [category]);
   
 
-  const actualizarUnidadesAPedir = (id,unidades)=>
+  const actualizarUnidadesAPedir = (id: string, unidades: string)=>
     {
 
         const updateProducts = [...products]
@@ -55,13 +55,10 @@ export default function Catalogo() {
         for(let i=0 ; i<updateProducts.length ; i++)
           {
 
-              if(updateProducts[i]._id==id)
+              if(updateProducts[i]._id == id)
                 {
-
-                    updateProducts[i].unidades=unidades;
-
+                    updateProducts[i].unidades = Number.parseInt(unidades);
                 }
-
 
           }
           console.log(updateProducts);

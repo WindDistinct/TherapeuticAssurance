@@ -16,7 +16,9 @@ interface CartContextProps {
     cart: CartProduct[];
     addToCart: (productId: string, nombre: string, precio: number, cantidad: number) => void;
     clearCart: () => void;
-};
+    deleteProduct: (index: number) => void; // Added deleteProduct
+    updateUnits: (index: number, unidades: number) => void; // Added updateUnits
+}
 
 //Se crea el contexto que almacenará el estado del carro, inicializado como indefinido
 export const CartContext = createContext<CartContextProps | undefined>(undefined);
@@ -94,7 +96,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setCart(updateCart);
 
 
-        console.log("TRATANDO cambiar unidades "+updateCart[index].cantidad);
+        console.log("TRATANDO cambiar unidades "+ updateCart[index].cantidad);
 
 }                          
 

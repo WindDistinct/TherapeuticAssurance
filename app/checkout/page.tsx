@@ -36,7 +36,7 @@ export default function Carrito() {
                     <li className="list-group-item d-flex justify-content-between align-items-start" key={index}>
                         <div className="ms-2 me-auto">
                             <div className="h4 fw-bold">{item.nombre}</div>
-                            Precio: ${item.precio} - Total: ${(item.total).toFixed(5)}
+                            Precio: S/.{item.precio} - Total: S/.{(item.total).toFixed(2)}
                             <div className="mt-3">
                                 <label htmlFor="">Cantidad</label>
                                 <input 
@@ -62,7 +62,7 @@ export default function Carrito() {
                     </li>
                 ))}
             </ol>
-            <p className="mt-5">Total: $ {total.toFixed(5)}</p>
+            <p className="mt-5">Total: S/. {total.toFixed(2)}</p>
             <button onClick={handleCheckout} className="btn btn-primary mt-5 position-relative top-50 start-50 translate-middle">Proceder al pago</button>
         </div>
     );

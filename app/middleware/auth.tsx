@@ -1,7 +1,5 @@
 import jwt from "jsonwebtoken";
-import { RequestCookies } from "next/dist/compiled/@edge-runtime/cookies";
 import { cookies } from "next/headers";
-import { NextRequest, NextResponse } from "next/server";
 
 export const auth = () => { 
     console.log(cookies());
