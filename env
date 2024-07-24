@@ -1,0 +1,4 @@
+MONGO_URI=mongodb+srv://nextjs9999:JvbWFNz0g7A9kMfQ@cluster0.cvalvxo.mongodb.net/
+TOKEN_SECRET=thereputicassurance
+MAILGUN_API_KEY=0ea2a57dd07b94a3300a07549d4ee5ae-6fafb9bf-be0ab76f
+MAILGUN_DOMAIN=factoroz.store
